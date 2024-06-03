@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -19,13 +20,17 @@ import { DayAdminComponent } from './components/day-admin/day-admin.component';
 import { WeatherService } from './services/weather.service';
 import * as fromWeather from './store/reducers';
 import { WeatherEffects } from './store/effects';
+import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { ForecastCardComponent } from './components/forecast-card/forecast-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     WeatherAdminComponent,
-    DayAdminComponent
+    DayAdminComponent,
+    WeatherCardComponent,
+    ForecastCardComponent
   ],
   imports: [
     BrowserModule,

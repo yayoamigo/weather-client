@@ -14,7 +14,11 @@ export class WeatherAdminComponent {
 
   weather$ = this.store.select(state => state.weather.weather);
 
-  constructor(private store: Store<fromWeather.State>) {}
+  constructor(private store: Store<fromWeather.State>) {
+    this.weather$.subscribe(data => {
+      console.log('Weather Data:', data);
+    });
+  }
 
   getWeather() {
     this.store.dispatch(WeatherActions.loadWeather({ city: this.model.city }));
