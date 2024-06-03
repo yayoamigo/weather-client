@@ -1,0 +1,7 @@
+<formly-form [model]="model" [fields]="fields" (modelChange)="onModelChange($event)">
+    <button type="button" (click)="getWeatherForecast()">Get Forecast</button>
+  </formly-form>
+  <div *ngIf="forecast$ | async as forecast">
+    <!-- Display forecast data -->
+  </div>
+  
