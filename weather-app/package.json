@@ -28,6 +28,7 @@
     "@ngx-formly/bootstrap": "^6.3.3",
     "@ngx-formly/core": "^6.3.3",
     "@popperjs/core": "^2.11.8",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
