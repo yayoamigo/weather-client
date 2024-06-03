@@ -1,2 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~animate.css/animate.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.weather-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.weather-container, .forecast-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
