@@ -1,0 +1,8 @@
+<form (ngSubmit)="getWeather()">
+  <input type="text" [(ngModel)]="model.city" name="city" required />
+  <button type="submit" class="btn btn-primary">Get Weather</button>
+</form>
+
+<div *ngIf="weather$ | async as weather">
+  <app-weather-card [weather]="weather"></app-weather-card>
+</div>

@@ -1,0 +1,13 @@
+  <form (ngSubmit)="getWeatherForecast()">
+    <input type="text" [(ngModel)]="model.city" name="city" required />
+    <button type="submit" class="btn btn-primary">Get Weather</button>
+  </form>
+  
+  <div *ngIf="forecast$ | async as forecast">
+    <div class="row">
+      <div class="col" *ngFor="let entry of forecast.list | slice:0:7">
+        <app-forecast-card [forecast]="entry"></app-forecast-card>
+      </div>
+    </div>
+  </div>
+  
