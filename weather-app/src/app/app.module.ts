@@ -9,14 +9,12 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { WeatherAdminComponent } from './components/weather-admin/weather-admin.component';
-import { DayAdminComponent } from './components/day-admin/day-admin.component';
+import { DayAdminComponent } from './components/forecast-admin/forecast-admin.component';
 import { WeatherService } from './services/weather.service';
 import * as fromWeather from './store/reducers';
 import { WeatherEffects } from './store/effects';
@@ -35,15 +33,14 @@ import { ForecastCardComponent } from './components/forecast-card/forecast-card.
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     StoreModule.forRoot({ [fromWeather.weatherFeatureKey]: fromWeather.reducer }),
     EffectsModule.forRoot([WeatherEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
-    FormlyModule.forRoot(),  // Import FormlyModule
-    FormlyBootstrapModule,   // Import FormlyBootstrapModule
+    FormlyModule.forRoot(), 
+    FormlyBootstrapModule,  
     BrowserAnimationsModule,
     MatIconModule
   ],

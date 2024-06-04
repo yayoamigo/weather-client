@@ -1,6 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~animate.css/animate.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
   background: url('assets/background.jpg') no-repeat center center fixed;
@@ -19,3 +20,29 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.custom-navbar {
+  background: linear-gradient(to right, #2193b0, #6dd5ed); 
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
+.navbar-nav .nav-item .nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+  margin-left: 15px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffeb3b !important;
+}
+

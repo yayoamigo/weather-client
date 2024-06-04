@@ -1,32 +1,26 @@
 <div class="card forecast-card animate__animated animate__fadeInUp">
-    <img [src]="forecast.main.temp > 15 ? 'assets/HOT.jpg' : 'assets/COLD.jpg'" class="card-img-top" alt="Weather Image">
-    <div class="card-img-overlay text-center">
-      <h5>{{ forecast.dt_txt | date: 'short' }}</h5>
-      <h1>{{ forecast.main.temp | number:'1.0-0' }}°C</h1>
+  <img [src]="forecast.temp_avg > 19 ? 'assets/hotday.jpeg' : 'assets/COLD.jpg'" class="card-img-top" alt="Weather Image">
+  <div class="card-img-overlay text-center">
+    <h5>{{ forecast.date | date: 'fullDate' }}</h5>
+    <h1>{{ forecast.temp_avg | number:'1.0-0' }}°C</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">More Information</h5>
+    <div class="row">
+      <div class="col">
+        <mat-icon>thermostat</mat-icon> Min: {{ forecast.temp_min | number:'1.0-0' }}°C
+      </div>
+      <div class="col">
+        <mat-icon>thermostat</mat-icon> Max: {{ forecast.temp_max | number:'1.0-0' }}°C
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">More Information</h5>
-      <div class="row">
-        <div class="col">
-          <mat-icon>thermostat</mat-icon> Min: {{ forecast.main.temp_min | number:'1.0-0' }}°C
-        </div>
-        <div class="col">
-          <mat-icon>thermostat</mat-icon> Max: {{ forecast.main.temp_max | number:'1.0-0' }}°C
-        </div>
+    <div class="row">
+      <div class="col">
+        <mat-icon>opacity</mat-icon> Humidity: {{ forecast.humidity_avg | number:'1.0-0' }}%
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-icon>opacity</mat-icon> Humidity: {{ forecast.main.humidity }}%
-        </div>
-        <div class="col">
-          <mat-icon>air</mat-icon> Wind: {{ forecast.wind.speed }} m/s
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-icon>cloud</mat-icon> {{ forecast.weather[0].description | titlecase }}
-        </div>
+      <div class="col">
+        <mat-icon>air</mat-icon> Wind: {{ forecast.wind_speed_avg | number:'1.0-1' }} m/s
       </div>
     </div>
   </div>
-  
+</div>
