@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromWeather from '../../store/reducers';
 import * as WeatherActions from '../../store/actions';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-day-admin',
-  templateUrl: './day-admin.component.html',
-  styleUrls: ['./day-admin.component.scss']
+  templateUrl: './forecast-admin.component.html',
+  styleUrls: ['./forecast-admin.component.scss']
 })
 export class DayAdminComponent {
   model = { city: '' };
@@ -14,13 +15,15 @@ export class DayAdminComponent {
 
   forecast$ = this.store.select(state => state.weather.forecast);
 
-  constructor(private store: Store<fromWeather.State>) {}
+  constructor(private store: Store<fromWeather.State>, private weatherService: WeatherService) {}
 
   getWeatherForecast() {
-    this.store.dispatch(WeatherActions.loadWeatherForecast({ city: this.model.city }));
+    this.weatherService.getWeatherForecast(this.model.city).subscribe(forecast => {
+      this.store.dispatch(WeatherActions.loadWeatherForecastSuccess({ forecast }));
+    });
   }
 
   onModelChange(event: any) {
-    console.log(event);
+    
   }
 }
