@@ -1,0 +1,27 @@
+<div class="card weather-card animate__animated animate__fadeInUp">
+    <img [src]="weather.main.temp > 19 ? 'assets/hotday.jpeg' : 'assets/COLD.jpg'" class="card-img-top" alt="Weather Image">
+    <div class="card-img-overlay text-center">
+      <h3>{{ weather.name }}</h3>
+      <h1>{{ weather.main.temp }}°C</h1>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">More Information</h5>
+      <div class="row">
+        <div class="col">
+          <mat-icon>thermostat</mat-icon> Min: {{ weather.main.temp_min }}°C
+        </div>
+        <div class="col">
+          <mat-icon>thermostat</mat-icon> Max: {{ weather.main.temp_max }}°C
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-icon>opacity</mat-icon> Humidity: {{ weather.main.humidity }}%
+        </div>
+        <div class="col">
+          <mat-icon>air</mat-icon> Wind: {{ weather.wind.speed }} m/s
+        </div>
+      </div>
+    </div>
+  </div>
+  

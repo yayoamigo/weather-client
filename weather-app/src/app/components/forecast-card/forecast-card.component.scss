@@ -1,0 +1,48 @@
+.forecast-card {
+    max-width: 300px; // Adjusted for uniformity
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    background-color: #4684c1;
+    color: #fff;
+    text-align: center;
+  
+    &:hover {
+      transform: translateY(-10px);
+    }
+  
+    .card-img-top {
+      height: 150px; // Adjusted for uniformity
+      object-fit: cover;
+      border-bottom: 2px solid #fff;
+    }
+  
+    .card-img-overlay {
+      top: 20%;
+      transform: translateY(-20%);
+    }
+  
+    .card-body {
+      background-color: #3f95c7;
+      padding: 15px;
+      border-top: 1px solid #e0e0e0;
+    }
+  
+    .row {
+      margin-bottom: 10px;
+    }
+  
+    mat-icon {
+      vertical-align: middle;
+      margin-right: 5px;
+      color: #f1c40f;
+    }
+  
+    h5, h1 {
+      margin: 10px 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  
