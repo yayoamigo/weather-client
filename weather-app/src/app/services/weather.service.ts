@@ -22,6 +22,8 @@ export class WeatherService {
     );
   }
 
+  
+  //This methods calculates the average temperature, min and max temperature, average humidity and average wind speed for each day in the forecast.
   private calculateDailyAverages(response: any): any {
     const dailyData: { [key: string]: any } = {};
 
